@@ -1,3 +1,5 @@
+
+
 CREATE TABLE cliente(
     cliente_id SERIAL PRIMARY KEY,
     nome_cliente VARCHAR(100)
@@ -27,11 +29,12 @@ VALUES
 INSERT INTO cliente_cidade (cid_id, clien_id)
 VALUES
 (1, 1),
+(1, 1),
 (1, 2),
 (2, 3);
 
 
-SELECT 
+SELECT DISTINCT
     cliente.nome_cliente AS "Nome do cliente",
     cidade.nome_cidade AS "Cidade"
 FROM cliente_cidade
