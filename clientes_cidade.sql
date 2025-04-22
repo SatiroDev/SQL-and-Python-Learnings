@@ -1,4 +1,4 @@
-
+-- clientes e suas cidades, sem duplicação
 
 CREATE TABLE cliente(
     cliente_id SERIAL PRIMARY KEY,
