@@ -61,58 +61,70 @@ CREATE TABLE funcionario (
     loja_id INT REFERENCES loja(loja_id)
 );
 
--- Endereços
+
 INSERT INTO endereco (rua, cidade, estado, cep) VALUES
 ('Rua A', 'Maranguape', 'CE', '61940-000'),
 ('Rua B', 'Fortaleza', 'CE', '60000-000');
 
--- Clientes
+
 INSERT INTO cliente (nome, email, telefone, endereco_id) VALUES
 ('João Lima', 'joao@gmail.com', '85912345678', 1),
 ('Maria Souza', 'maria@hotmail.com', '85987654321', 2),
 ('José Silva', 'jose@outlook.com', '85911223344', 1);
 
--- Categorias
+
 INSERT INTO categoria (nome_categoria) VALUES
 ('Ação'),
 ('Drama'),
 ('Comédia'),
 ('Ficção Científica');
 
--- Filmes
+
 INSERT INTO filme (titulo, ano_lancamento, categoria_id) VALUES
 ('Matrix', 1999, 4),
 ('Titanic', 1997, 2),
 ('Vingadores', 2012, 1),
 ('Todo Mundo em Pânico', 2000, 3);
 
--- Estoque
+
 INSERT INTO estoque (filme_id, quantidade_disponivel) VALUES
 (1, 3),
 (2, 2),
 (3, 4),
 (4, 1);
 
--- Locações
+
 INSERT INTO locacao (cliente_id, filme_id, data_locacao, data_retorno) VALUES
 (1, 1, '2025-03-01', '2025-03-05'),
 (2, 2, '2025-03-02', '2025-03-06'),
 (3, 3, '2025-03-03', '2025-03-07'),
 (1, 4, '2025-03-04', '2025-03-08');
 
--- Pagamentos
+
 INSERT INTO pagamento (locacao_id, valor, data_pagamento) VALUES
 (1, 10.00, '2025-03-01'),
 (2, 8.50, '2025-03-02'),
 (3, 12.00, '2025-03-03'),
 (4, 7.00, '2025-03-04');
 
--- Lojas
+
 INSERT INTO loja (nome_loja, endereco_id) VALUES
 ('DVD Express - Maranguape', 1),
 ('DVD Express - Fortaleza', 2);
 
--- Funcionários
+
 INSERT INTO funcionario (nome, cargo, loja_id) VALUES
 ('Carlos Lima', 'Gerente', 1),
 ('Fernanda Alves', 'Atendente', 2);
+
+
+
+
+-- consultas 
+-- 1) "Quais clientes moram na cidade de "Maranguape"?
+
+SELECT
+    c.nome AS "Nome do cliente",
+    e.cidade AS "Nome da cidade"
+FROM cliente c 
+INNER JOIN endereco e ON e.endereco_id = c.endereco_id 
