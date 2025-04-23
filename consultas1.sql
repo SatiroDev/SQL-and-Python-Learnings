@@ -132,3 +132,9 @@ WHERE e.cidade = 'Maranguape'
 
 -- 2) "Quais filmes ainda têm mais de 2 cópias disponíveis no estoque?"
 
+SELECT 
+    f.titulo AS "Nome do filme",
+    t.quantidade_disponivel AS "Quantidade disponivel"
+FROM estoque e
+INNER JOIN filme f ON e.filme_id = f.filme_id
+GROUP BY f.titulo
