@@ -134,7 +134,8 @@ WHERE e.cidade = 'Maranguape'
 
 SELECT 
     f.titulo AS "Nome do filme",
-    t.quantidade_disponivel AS "Quantidade disponivel"
+    COUNT(t.quantidade_disponivel) AS "Quantidade disponivel"
 FROM estoque e
 INNER JOIN filme f ON e.filme_id = f.filme_id
 GROUP BY f.titulo
+WHERE COUNT(t.quantidade_disponivel) > 2
