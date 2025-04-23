@@ -85,4 +85,4 @@ SELECT
 FROM locacao l 
 INNER JOIN cliente c ON l.cliente_id = c.cliente_id
 INNER JOIN filme f ON l.filme_id = f.filme_id
-
+WHERE c.nome = 'Maria Souza'
