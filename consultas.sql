@@ -91,6 +91,6 @@ WHERE c.nome = 'Maria Souza'
 SELECT
     c.nome AS "Nome do cliente",
     COUNT(locacao_id) AS "Quantidade de alocação"
-FROM locacao a 
-INNER JOIN cliente c ON a.cliente_id = c.cliente_id
+FROM locacao l
+INNER JOIN cliente c ON l.cliente_id = c.cliente_id
 GROUP BY c.nome
