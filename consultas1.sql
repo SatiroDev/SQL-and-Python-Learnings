@@ -129,3 +129,6 @@ SELECT
 FROM cliente c 
 INNER JOIN endereco e ON e.endereco_id = c.endereco_id 
 WHERE e.cidade = 'Maranguape'
+
+-- 2) "Quais filmes ainda têm mais de 2 cópias disponíveis no estoque?"
+
