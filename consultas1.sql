@@ -142,6 +142,8 @@ WHERE e.quantidade_disponivel > 2
 -- 3) "Liste todas as locações feitas entre '2025-03-01' e '2025-03-03'."
 
 SELECT 
+    f.titulo AS "Filme",
     l.data_locacao AS "data da locação"
 FROM locacao l 
+INNER JOIN filme f ON l.filme_id = f.filme_id
 WHERE l.data_locacao = '2025-03-02'
