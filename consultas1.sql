@@ -128,3 +128,4 @@ SELECT
     e.cidade AS "Nome da cidade"
 FROM cliente c 
 INNER JOIN endereco e ON e.endereco_id = c.endereco_id 
+WHERE e.cidade = 'Maranguape'
