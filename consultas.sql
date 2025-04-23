@@ -90,7 +90,7 @@ WHERE c.nome = 'Maria Souza'
 -- 3) "Quantas locações cada cliente fez?"
 SELECT
     c.nome AS "Nome do cliente",
-    COUNT(locacao_id) AS "Quantidade de alocação"
+    COUNT(l.locacao_id) AS "Quantidade de alocação"
 FROM locacao l
 INNER JOIN cliente c ON l.cliente_id = c.cliente_id
 GROUP BY c.nome
