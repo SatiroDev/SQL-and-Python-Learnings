@@ -77,3 +77,12 @@ FROM locacao l
 INNER JOIN cliente c ON l.cliente_id = c.cliente_id
 INNER JOIN filme f ON l.filme_id = f.filme_id
 WHERE f.categoria = 'Ação'
+
+---2) "Quais filmes o cliente 'Maria Souza' alugou?"
+SELECT 
+    c.nome AS "Nome cliente",
+    f.titulo AS "Nome do filme"
+FROM locacao l 
+INNER JOIN cliente c ON l.cliente_id = c.cliente_id
+INNER JOIN filme f ON l.filme_id = f.filme_id
+
